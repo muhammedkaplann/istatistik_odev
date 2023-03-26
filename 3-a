@@ -1,0 +1,17 @@
+from matplotlib import pyplot as plt
+import pandas as pd
+
+data=["6-<8","8-<10","10-<12","12-<14","14-<16","16-<18","18-<20","20-<22","22-<24","24-<26","26-<28","28-<30","30-<35","35-<40","40-<45"]
+df=pd.Series(data).value_counts()
+
+rate_list=df.keys().tolist()
+freq_list=[6,23,30,35,32,48,42,40,28,27,26,14,27,11,2]
+
+
+fig=plt.figure(figsize=(15,5))
+
+plt.bar(rate_list,freq_list, color="blue", hatch="+")
+
+plt.title("Şehir Otobüs Güzergâhlarının Planlanması")
+
+plt.show()
